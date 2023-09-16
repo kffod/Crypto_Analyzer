@@ -6,14 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
 import com.example.cryptocurrencyanalizer.R
 import com.example.cryptocurrencyanalizer.databinding.CurrencyItemLayoutBinding
 import com.example.cryptocurrencyanalizer.fragment.HomeFragmentDirections
+import com.example.cryptocurrencyanalizer.fragment.MarketFragmentDirections
+import com.example.cryptocurrencyanalizer.fragment.WatchlistFragmentDirections
 import com.example.cryptocurrencyanalizer.models.CryptoCurrency
 
-class MarketAdapter(var context : Context, var list : List<CryptoCurrency>) : RecyclerView.Adapter<MarketAdapter.MarketViewHolder>() {
+class MarketAdapter(var context: Context, var list: List<CryptoCurrency>, var type: String) : RecyclerView.Adapter<MarketAdapter.MarketViewHolder>() {
 
     inner class MarketViewHolder(view : View) : RecyclerView.ViewHolder(view){
         var binding = CurrencyItemLayoutBinding.bind(view)
@@ -22,6 +23,11 @@ class MarketAdapter(var context : Context, var list : List<CryptoCurrency>) : Re
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MarketViewHolder {
         return MarketViewHolder(LayoutInflater.from(context).inflate(R.layout.currency_item_layout, parent, false))
+    }
+
+    fun updateDate(dataItem : List<CryptoCurrency>){
+        list = dataItem
+        notifyDataSetChanged()
     }
 
     override fun getItemCount(): Int {
@@ -56,10 +62,22 @@ class MarketAdapter(var context : Context, var list : List<CryptoCurrency>) : Re
             holder.binding.currencyChangeTextView.text= "${String.format("%.02f",item.quotes[0].percentChange24h)} %"
         }
         holder.itemView.setOnClickListener{
+
+
+            if(type == "home"){
             findNavController(it).navigate(
                 HomeFragmentDirections.actionHomeFragment2ToDetailsFragment(item)
             )
-        }
+        }else if(type == "market"){
+                findNavController(it).navigate(
+                    MarketFragmentDirections.actionMarketFragment2ToDetailsFragment(item))
+            }else{
+                findNavController(it).navigate(
+                   WatchlistFragmentDirections.actionWatchlistFragment2ToDetailsFragment(item))
+
+            }
+
+            }
 
     }
 }

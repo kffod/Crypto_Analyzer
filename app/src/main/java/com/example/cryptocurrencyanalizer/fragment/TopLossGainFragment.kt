@@ -7,7 +7,6 @@ import android.view.View
 import android.view.View.GONE
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
-import com.example.cryptocurrencyanalizer.R
 import com.example.cryptocurrencyanalizer.adapter.MarketAdapter
 import com.example.cryptocurrencyanalizer.apis.ApiInterface
 import com.example.cryptocurrencyanalizer.apis.ApiUtilities
@@ -60,7 +59,7 @@ class TopLossGainFragment : Fragment() {
                             list.add(dataItem[i])
                         }
                         binding.topGainLoseRecyclerView.adapter =
-                            MarketAdapter(requireContext(), list)
+                            MarketAdapter(requireContext(), list, "home")
                     }
                     else{
                         list.clear()
@@ -68,7 +67,7 @@ class TopLossGainFragment : Fragment() {
                             list.add(dataItem[dataItem.size-1-i])
                         }
                         binding.topGainLoseRecyclerView.adapter =
-                            MarketAdapter(requireContext(), list)
+                            MarketAdapter(requireContext(), list, "home")
                     }
 
                     }
