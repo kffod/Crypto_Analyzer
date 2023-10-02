@@ -13,6 +13,7 @@
         <action
             android:id="@+id/action_homeFragment2_to_detailsFragment"
             app:destination="@id/detailsFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/marketFragment2"
@@ -42,4 +43,13 @@
             app:nullable="true"
             android:defaultValue="@null" />
     </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.cryptocurrencyanalizer.fragment.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile"
+        />
+
+
+
 </navigation>
