@@ -36,7 +36,8 @@
     <fragment
         android:id="@+id/detailsFragment"
         android:name="com.example.cryptocurrencyanalizer.fragment.DetailsFragment"
-        android:label="DetailsFragment" >
+        android:label="DetailsFragment"
+        tools:layout="@layout/fragment_details">
         <argument
             android:name="data"
             app:argType="com.example.cryptocurrencyanalizer.models.CryptoCurrency"
@@ -44,12 +45,9 @@
             android:defaultValue="@null" />
     </fragment>
     <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.example.cryptocurrencyanalizer.fragment.ProfileFragment"
-        android:label="ProfileFragment"
-        tools:layout="@layout/fragment_profile"
-        />
-
+        android:id="@+id/webView"
+        android:name="com.example.cryptocurrencyanalizer.fragment.TradeViewFragment"
+        android:label="TradeViewFragment" />
 
 
 </navigation>

@@ -29,6 +29,8 @@ class MainActivity : AppCompatActivity() {
         binding.bottomBar.setupWithNavController(popupMenu.menu, navController)
 
 
+
+
     }
 
 
