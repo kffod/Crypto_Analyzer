@@ -21,7 +21,7 @@
         android:id="@+id/webView"
         android:enabled="true"
         android:icon="@drawable/baseline_person_outline_24"
-        android:title="Prediction"
+        android:title="@string/prediction"
         app:showAsAction="always" />
 
 
