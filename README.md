@@ -1,3 +1,24 @@
+# Crypto Analyzer
+
+Crypto Analyzer is a tool to analyze cryptocurrency data. This guide will help you set up and run the app in Android Studio.
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed on your machine:
+
+- Android Studio
+- Java Development Kit (JDK)
+- An Android device or emulator for testing
+
+## Installation
+
+### Clone the repository:
+
+```bash
+git clone https://github.com/kffod/Crypto_Analyzer.git
+cd Crypto_Analyzer
+```
+
 ## Opening the Project in Android Studio
 
 1. Launch Android Studio.
@@ -33,6 +54,3 @@ If you encounter any issues, try the following:
 
 If you want to contribute to this project, please fork the repository and create a pull request with your changes.
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
